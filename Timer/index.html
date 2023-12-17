@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100&family=Arvo&family=Caveat&family=Comfortaa:wght@300&family=Exo+2:ital,wght@1,100&family=Exo:wght@100&family=Inconsolata:wght@300&family=Kanit&family=Space+Grotesk:wght@300&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(black, 50%, rgb(22, 22, 22))fixed;
+            font-family: 'Archivo', sans-serif;
+            font-family: 'Arvo', serif;
+            font-family: 'Caveat', cursive;
+            font-family: 'Comfortaa', sans-serif;
+            font-family: 'Exo', sans-serif;
+            font-family: 'Exo 2', sans-serif;
+            font-family: 'Inconsolata', monospace;
+            font-family: 'Kanit', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #fff;
+            width: 100vw;
+            height: 95vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .time span {
+            font-size: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="time">
+        <span id="hrs">00</span><span>:</span>
+        <span id="min">00</span><span>:</span>
+        <span id="sec">00</span>
+    </div>
+    <script>
+        let hrs = document.getElementById("hrs");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+        setInterval(() => {
+            let time = new Date();
+            hrs.innerHTML = (time.getHours() < 10 ? "0" : "") + time.getHours();
+            min.innerHTML = (time.getMinutes() < 10 ? "0" : "") + time.getMinutes();
+            sec.innerHTML = (time.getSeconds() < 10 ? "0" : "") + time.getSeconds();
+        }, 1000)
+    </script>
+</body>
+
+</html>
